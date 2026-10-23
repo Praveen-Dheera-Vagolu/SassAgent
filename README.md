@@ -37,33 +37,7 @@ TrimOps strictly implements the official hackathon 4-step agentic loop:
 
 ```
 
-[ Mock SaaS Admin APIs & User Directory Logs ]
-│
-▼
-┌───────────────────────────┐
-│     Step 1: INGESTION     │  (SaaS tools, renewal policies, credentials, schema validation)
-└─────────────┬─────────────┘
-│
-▼
-┌───────────────────────────┐
-│     Step 2: RETRIEVAL     │  (Read billing & user logs via Cheerio, snapshot Audit_Evidence)
-└─────────────┬─────────────┘
-│
-▼
-┌───────────────────────────┐
-│  Step 3: DECISION ENGINE  │  - Inactivity Rule: Days inactive >= 90 -> Mark idle
-│                           │  - Renewal Horizon: <= 30d Alert (Critical if <= 14d)
-│                           │  - Mid-Term Lock: Annual mid-term -> DEFERRED (no penalty)
-│                           │  - Safe Fallback: Missing directory -> [STATUS: UNCERTAIN]
-└─────────────┬─────────────┘
-│
-▼
-┌───────────────────────────┐
-│   Step 4: HITL GATE &     │  - Formulate Action_Proposal with projected savings ($)
-│       VERIFICATION        │  - Idempotent Human-in-the-Loop "Authorize & Execute"
-│                           │  - Decoupled re-scrape: assert observed == target seats
-│                           │  - Issue tamper-evident SHA-256 cryptographic receipt
-└───────────────────────────┘
+
 
 ```
 
