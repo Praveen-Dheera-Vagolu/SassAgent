@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SaaSOptimizer AI — Google Antigravity SaaS Renewal & Rightsizing Agent</title>
+  <meta name="description" content="Autonomous SaaS Renewal & Seat Rightsizing Agent with Google Antigravity Physics Engine, LangGraph State Machine, and Closed-Loop Verification.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <!-- Matter.js Physics Engine -->
+  <script src="/static/matter.min.js"></script>
+</head>
+<body class="dark-mode">
+
+  <!-- Background Ambient Glow & Grid -->
+  <div class="space-background">
+    <div class="stars"></div>
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <!-- Top Navigation Header (Physics Enabled) -->
+  <header class="top-nav-bar physics-element" id="elem-nav">
+    <div class="nav-left">
+      <span class="brand-badge"><span class="badge-dot pulse"></span> Agentic AI Hackathon 2026</span>
+      <span class="powered-by">Powered by <strong>Ziro.Digital</strong></span>
+    </div>
+    <div class="nav-right">
+      <a href="javascript:void(0)" class="nav-link" id="btn-docs">Architecture</a>
+      <a href="javascript:void(0)" class="nav-link" id="btn-toggle-terminal">Audit Terminal</a>
+      <div class="theme-pill" id="theme-toggle" title="Toggle Theme">
+        <span class="theme-icon">✨</span>
+      </div>
+      <div class="avatar-circle" title="Admin Operator">OP</div>
+    </div>
+  </header>
+
+  <!-- Physics Container for all floating/falling interactive elements -->
+  <main id="antigravity-world" class="world-container">
+
+    <!-- Google Antigravity Core Search Centerpiece -->
+    <section class="google-centerpiece physics-element" id="elem-logo-group">
+      <div class="google-logo">
+        <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+        <span class="logo-subtext">Antigravity · SaaSOptimizer AI</span>
+      </div>
+    </section>
+
+    <div class="search-box-wrapper physics-element" id="elem-search-box">
+      <div class="search-bar">
+        <svg class="search-icon" viewBox="0 0 24 24">
+          <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <input type="text" id="saas-search-input" placeholder="Search unutilized SaaS seats, licenses, or contracts..." value="Audit: Slack, Jira, Google Workspace, GitHub" />
+        <span class="search-mic" title="Voice / AI Query">🎙️</span>
+      </div>
+    </div>
+
+    <!-- Antigravity Buttons Row -->
+    <div class="search-buttons-row physics-element" id="elem-search-btns">
+      <button class="g-btn" id="btn-run-all">Optimize All Subscriptions</button>
+      <button class="g-btn" id="btn-feeling-lucky">I'm Feeling Rightsized</button>
+    </div>
+
+    <!-- Quick Test Scenario Chips (TC1 - TC4) -->
+    <div class="scenarios-row physics-element" id="elem-scenario-chips">
+      <div class="chips-label">🎯 Mandatory Test Scenarios:</div>
+      <div class="chips-container">
+        <button class="chip-btn tc1" id="chip-tc1" title="Slack Enterprise (100 seats, 14 days renewal, 82% utilization alert)">
+          <span class="chip-badge">TC1</span> Slack 14d Renewal Alert
+        </button>
+        <button class="chip-btn tc2" id="chip-tc2" title="Flag user dev_user_04 inactive 94 days">
+          <span class="chip-badge">TC2</span> dev_user_04 Inactive 94d
+        </button>
+        <button class="chip-btn tc3" id="chip-tc3" title="Google Workspace: Mid-Term Contract Lock deferral">
+          <span class="chip-badge">TC3</span> Google Mid-Term Lock
+        </button>
+        <button class="chip-btn tc4" id="chip-tc4" title="Jira Cloud: Reduce 50 to 45 seats, HITL approval & Closed-Loop Verify">
+          <span class="chip-badge">TC4</span> Jira Rightsizing & Verify
+        </button>
+        <button class="chip-btn reset-btn" id="chip-reset" title="Reset all mock consoles to default state">
+          🔄 Reset All
+        </button>
+      </div>
+    </div>
+
+    <!-- Dynamic SaaS Subscription Cards (Spawning as physical rigid bodies) -->
+    <div id="saas-cards-container">
+      <!-- Populated dynamically via app.js -->
+    </div>
+
+  </main>
+
+  <!-- Floating Antigravity Physics Controller Dock (Fixed viewport control) -->
+  <aside class="gravity-dock">
+    <div class="dock-header">
+      <span class="dock-title">🪐 Physics Engine</span>
+      <span class="live-pulse" id="physics-status">ACTIVE</span>
+    </div>
+    <div class="dock-buttons">
+      <button class="dock-btn active" id="btn-gravity-normal" title="Earth Gravity">
+        <span>🌍</span> Earth
+      </button>
+      <button class="dock-btn" id="btn-gravity-zero" title="Zero Gravity Floating">
+        <span>🚀</span> Zero-G
+      </button>
+      <button class="dock-btn" id="btn-gravity-reverse" title="Antigravity Lift">
+        <span>🎈</span> Inverted
+      </button>
+      <button class="dock-btn" id="btn-physics-explode" title="Repulsion Impulse">
+        <span>💥</span> Impulse
+      </button>
+      <button class="dock-btn" id="btn-physics-gather" title="Reassemble to Center">
+        <span>🧲</span> Reassemble
+      </button>
+    </div>
+  </aside>
+
+  <!-- Live Metrics HUD Bar (Bottom Status) -->
+  <footer class="live-hud-bar">
+    <div class="hud-item">
+      <span class="hud-label">Monitored SaaS</span>
+      <span class="hud-value" id="hud-sub-count">4 Applications</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">Total Seats Managed</span>
+      <span class="hud-value" id="hud-total-seats">235 Seats</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">Flagged Idle (≥90d)</span>
+      <span class="hud-value warning" id="hud-idle-seats">35 Idle</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">Annual Savings Identified</span>
+      <span class="hud-value success" id="hud-savings">$15,480 / yr</span>
+    </div>
+    <div class="hud-item">
+      <span class="hud-label">Verification Ledger</span>
+      <span class="hud-value verified" id="hud-verified-count">Ready</span>
+    </div>
+    <button class="terminal-toggle-btn" id="hud-terminal-btn">
+      <span class="term-icon">📟</span> Open Audit Ledger
+    </button>
+  </footer>
+
+  <!-- Human-In-The-Loop (HITL) Proposal Modal Gate -->
+  <div class="modal-overlay hidden" id="hitl-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-badge-gate">
+          <span class="shield-icon">🛡️</span>
+          <span>HUMAN-IN-THE-LOOP ACTION GATE</span>
+        </div>
+        <button class="modal-close" id="modal-close-btn">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <h2 id="modal-title" class="proposal-title">Rightsizing Proposal Review</h2>
+        <p class="modal-desc" id="modal-desc">
+          Agent has identified unutilized licenses eligible for renewal downscaling. Approval is required before mutating production consoles.
+        </p>
+
+        <div class="proposal-metrics-grid">
+          <div class="metric-box">
+            <span class="metric-title">Current Seats</span>
+            <span class="metric-val" id="prop-curr-seats">50</span>
+          </div>
+          <div class="metric-box highlight">
+            <span class="metric-title">Target Seats</span>
+            <span class="metric-val" id="prop-target-seats">45</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-title">Seats to Remove</span>
+            <span class="metric-val danger" id="prop-diff-seats">-5</span>
+          </div>
+          <div class="metric-box">
+            <span class="metric-title">Monthly Savings</span>
+            <span class="metric-val success" id="prop-savings-mo">$250.00</span>
+          </div>
+        </div>
+
+        <div class="flagged-users-section">
+          <h3>Flagged Inactive Accounts (≥ 90 Days Idle):</h3>
+          <div class="user-chips-list" id="modal-user-list">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+        <div class="contract-clause-note">
+          <span class="info-icon">📋</span>
+          <span id="modal-clause-text">Contract allows renewal reduction. Notice requirement met.</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="action-btn btn-reject" id="btn-hitl-reject">
+          ❌ Reject / Defer
+        </button>
+        <button class="action-btn btn-approve pulse" id="btn-hitl-approve">
+          ✅ Authorize & Apply to Console
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inspection Drawer: Subscription Details & User Activity List -->
+  <div class="side-drawer hidden" id="detail-drawer">
+    <div class="drawer-header">
+      <h3 id="drawer-sub-name">Subscription Detail</h3>
+      <button class="drawer-close" id="drawer-close-btn">&times;</button>
+    </div>
+    <div class="drawer-content" id="drawer-content">
+      <!-- Injected by app.js -->
+    </div>
+  </div>
+
+  <!-- Collapsible Audit Terminal Drawer -->
+  <section class="audit-terminal hidden" id="audit-terminal">
+    <div class="terminal-bar">
+      <div class="terminal-dots">
+        <span class="t-dot red"></span>
+        <span class="t-dot yellow"></span>
+        <span class="t-dot green"></span>
+        <span class="terminal-title">SaaSOptimizer AI — Agentic State Machine & Closed-Loop Verification Log</span>
+      </div>
+      <div class="terminal-actions">
+        <button class="term-btn" id="btn-clear-terminal">Clear</button>
+        <button class="term-btn" id="btn-close-terminal">&times;</button>
+      </div>
+    </div>
+    <div class="terminal-body" id="terminal-body">
+      <div class="log-entry system">
+        <span class="log-time">[SYSTEM]</span>
+        <span class="log-msg">Agentic State Graph initialized. WebSocket link established. Matter.js physics online.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal for Architecture & Hackathon Submission Info -->
+  <div class="modal-overlay hidden" id="arch-modal">
+    <div class="modal-card wide">
+      <div class="modal-header">
+        <div class="modal-badge-gate">
+          <span>🏆 AGENTIC AI HACKATHON 2026 — SUBMISSION BRIEF</span>
+        </div>
+        <button class="modal-close" id="arch-modal-close">&times;</button>
+      </div>
+      <div class="modal-body doc-body">
+        <h2>SaaSOptimizer AI — Autonomous SaaS Renewal & Rightsizing Agent</h2>
+        <div class="arch-flow-diagram">
+          <div class="flow-step">
+            <span class="num">1</span>
+            <strong>Ingest & Collect</strong>
+            <p>SSO logs, SAML sessions, SaaS contract renewal dates & clauses.</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <span class="num">2</span>
+            <strong>Plan & Match</strong>
+            <p>Compute seat utilization, flag ≥90d inactive seats, generate urgency alerts.</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <span class="num">3</span>
+            <strong>HITL Action Gate</strong>
+            <p>Enforce mid-term contract locks. Pause graph for human sign-off on downscaling.</p>
+          </div>
+          <div class="flow-arrow">➔</div>
+          <div class="flow-step">
+            <span class="num">4</span>
+            <strong>Closed-Loop Verify</strong>
+            <p>Mutate console API, re-scrape live portal, assert observed == target seats, sign SHA-256 receipt.</p>
+          </div>
+        </div>
+
+        <div class="test-coverage-grid">
+          <div class="tc-item">
+            <strong>TC1: Slack Enterprise (14d Renewal)</strong>
+            <p>Alert triggered with utilization metrics (18 idle seats, 82% utilization, $6,912/yr potential waste).</p>
+          </div>
+          <div class="tc-item">
+            <strong>TC2: User dev_user_04 Inactive 94 Days</strong>
+            <p>Identifies exact user in Jira Cloud who has crossed the 90-day inactivity threshold.</p>
+          </div>
+          <div class="tc-item">
+            <strong>TC3: Google Workspace (Mid-Term Lock)</strong>
+            <p>50 seats, 10 idle, 210 days to renewal. Action DEFERRED due to mid-term contract lock clause.</p>
+          </div>
+          <div class="tc-item">
+            <strong>TC4: Jira Cloud (Reduced & Verified)</strong>
+            <p>50 → 45 seats. Pauses for HITL approval. Upon authorization, mutates console, re-scrapes live seats, asserts 45 observed == 45 target.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

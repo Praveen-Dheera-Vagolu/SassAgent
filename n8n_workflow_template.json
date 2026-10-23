@@ -1,0 +1,142 @@
+{
+  "name": "TrimOps SaaS Renewal & Seat Optimizer Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily Audit Schedule (09:00 AM)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:5000/api/tools",
+        "options": {}
+      },
+      "id": "fetch-tools",
+      "name": "Fetch SaaS Tool Registry",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:5000/api/testcases/run/ALL",
+        "method": "POST",
+        "options": {}
+      },
+      "id": "trigger-audit-engine",
+      "name": "Execute TrimOps Ingestion & Inactivity Classifier",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.status === 'COMPLETED' }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "filter-actionable",
+      "name": "Filter Actionable Proposals",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "notice": "HITL Approval Required: TrimOps prepared seat reduction proposal. Operator approval required before mutating vendor license count.",
+        "options": {}
+      },
+      "id": "hitl-approval-gate",
+      "name": "Human-in-the-Loop Approval Step",
+      "type": "n8n-nodes-base.manualApproval",
+      "typeVersion": 1,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "url": "http://127.0.0.1:5000/api/proposals/prop_zoom_001/approve",
+        "method": "POST",
+        "options": {}
+      },
+      "id": "execute-verified-change",
+      "name": "Execute Approved Seat Downgrade & Mint SHA-256 Receipt",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1340, 200]
+    }
+  ],
+  "connections": {
+    "Daily Audit Schedule (09:00 AM)": {
+      "main": [
+        [
+          {
+            "node": "Fetch SaaS Tool Registry",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Fetch SaaS Tool Registry": {
+      "main": [
+        [
+          {
+            "node": "Execute TrimOps Ingestion & Inactivity Classifier",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute TrimOps Ingestion & Inactivity Classifier": {
+      "main": [
+        [
+          {
+            "node": "Filter Actionable Proposals",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter Actionable Proposals": {
+      "main": [
+        [
+          {
+            "node": "Human-in-the-Loop Approval Step",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Human-in-the-Loop Approval Step": {
+      "main": [
+        [
+          {
+            "node": "Execute Approved Seat Downgrade & Mint SHA-256 Receipt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
