@@ -14,26 +14,7 @@ Enterprises lose **20% to 35% of their software budget** on unutilized seats, de
 
 ---
 
-## 🏆 Judge Quick-Tour & 3-Minute Winning Evaluation Guide
 
-If you have 3 minutes to evaluate TrimOps, follow this exact path:
-
-1. **Open the Live Workspace (`http://127.0.0.1:5000`)**:
-   - Notice the **14d CRITICAL** pulsing badge on Figma Enterprise and the inline audit strips showing the exact mock endpoints (`SRC: /api/mock-admin/...`) and firing rules (`RULE: RenewalHorizonEvaluator`).
-2. **Authorize the Closed-Loop Seat Downgrade (TC4)**:
-   - On the right-hand **Human-in-the-Loop Gate**, look at the Zoom proposal card (`80 Seats ─── (-15 Idle) ───> 65 Seats`, saving `+$3,600/yr`).
-   - Click **"Authorize & Execute Downgrade"**.
-   - Watch the **Cinematic 4-Step Closed-Loop Verification**:
-     1. *Authorization Dispatch* &rarr; 2. *Console Mutation* &rarr; 3. *Decoupled Read-Back* &rarr; 4. *Cryptographic SHA-256 Receipt Minting*.
-3. **Execute the One-Click Guided Demo (Tab 2)**:
-   - Click **"Scenario Simulator"** in the sidebar.
-   - Click **"Start Guided 5-Step Demo"**.
-   - Watch the automated runner verify **TC1** (14d alert), **TC2** (ghost seats), **TC3** (annual lock protection), **TC4** (closed loop), and **Rule Step 3 UNCERTAIN** (explicit missing-evidence abort with diagnostic breakdown).
-4. **Inspect Safety Rules (Tab 4)**:
-   - Click **"Demo Checklist & Safety Rules"** (or click the header badge `Safety Rules 4/4 Enforced`).
-   - Review the strict zero-PII guarantee, idempotent execution locks, and the interactive Safe 2FA step simulator.
-
----
 
 ## 📊 Rubric Scorecard & Competitive Differentiators
 
