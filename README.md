@@ -190,7 +190,7 @@ Your updated `README.md` file is ready:
 
 > 🏆 **Agentic AI Hackathon 2026 — Powered By Ziro.Digital**  
 > 📌 **Track:** Business & Productivity AI  
-> 🎥 **Demo Walkthrough Video:** [Watch Demo Recording](https://drive.google.com) *(Google Drive / Unlisted YouTube)*  
+> 🎥 **Demo Walkthrough Video:https://drive.google.com/file/d/1OHwOygphBCG9AMF4q69PhPt--WlAUV1Y/view?usp=drive_link
 > 💻 **Live Application Dashboard:** [http://127.0.0.1:5000](http://127.0.0.1:5000)  
 > 📦 **GitHub Repository:** [https://github.com/Praveen-Dheera-Vagolu/SassAgent](https://github.com/Praveen-Dheera-Vagolu/SassAgent)
 
