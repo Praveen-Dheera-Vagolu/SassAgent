@@ -406,13 +406,3 @@ npm run dev
 
 ---
 
-### How to Update It on GitHub
-
-1. Open your repository at `[https://github.com/Praveen-Dheera-Vagolu/SassAgent](https://github.com/Praveen-Dheera-Vagolu/SassAgent)`.
-2. Click on the `README.md` file and click the pencil icon (**Edit this file**).
-3. Paste the contents above (remember to replace the demo video link at line 5 with your actual Drive or YouTube link).
-4. Click **Commit changes...** at the top right.
-
-<FollowUp label="Want to prepare for potential jury questions about the TrimOps architecture?" query="What technical questions might the judges ask during the TrimOps evaluation round?"/>
-
-```
